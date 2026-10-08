@@ -1,1 +1,26 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Write — Content Manager</title></head><body><script src="https://unpkg.com/netlify-cms@^2.10.192/dist/netlify-cms.js"></script></body></html>
+---
+layout: default
+title: Home
+---
+<section class="intro">
+  <p class="eyebrow">Journal</p>
+  <h1>{{ site.title }}</h1>
+  <p>{{ site.description }}</p>
+</section>
+<section class="posts">
+{% if site.posts.size > 0 %}
+{% for post in site.posts %}
+<article class="post-card">
+  {% if post.image %}<a href="{{ post.url | relative_url }}"><img src="{{ post.image | relative_url }}" alt="{{ post.title }}"></a>{% endif %}
+  <div>
+    <p class="date">{{ post.date | date: "%d %B %Y" }}</p>
+    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    {% if post.excerpt %}<p>{{ post.excerpt | strip_html | truncate: 180 }}</p>{% endif %}
+    <a class="read-more" href="{{ post.url | relative_url }}">Read →</a>
+  </div>
+</article>
+{% endfor %}
+{% else %}
+<div class="empty"><h2>Your first post is waiting.</h2><p>Go to <a href="{{ '/admin/' | relative_url }}">Admin</a> to write it.</p></div>
+{% endif %}
+</section>

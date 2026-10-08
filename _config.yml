@@ -1,9 +1,13 @@
-title: "Your Blog"
-description: "A place for notes, ideas and stories."
-url: ""
-baseurl: ""
+title: "Thomas Lee — Journal"
+description: "Notes, ideas and stories."
+url: "https://thomasjameslee1.github.io"
+baseurl: "/journal"
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
-timezone: Australia/Melbourne
+timezone: Australia/Sydney
 plugins: []
-exclude: [README.md, Gemfile, Gemfile.lock, vendor]
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
