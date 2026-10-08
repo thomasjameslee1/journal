@@ -1,0 +1,9 @@
+title: "Your Blog"
+description: "A place for notes, ideas and stories."
+url: ""
+baseurl: ""
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+timezone: Australia/Melbourne
+plugins: []
+exclude: [README.md, Gemfile, Gemfile.lock, vendor]
